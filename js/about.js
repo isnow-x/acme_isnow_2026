@@ -39,22 +39,23 @@ questions.forEach(q => {
   });
 });
 */
-
-// swiper
-const slideWrapper = new Swiper(".slidewrapper", {
+const swiper = new Swiper(".portfolio .swiper", {
+  // Optional parameters
   direction: "horizontal",
   loop: true,
+  // If we need pagination
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
 });
-const csprevBtn = document.querySelector(".slidewrapper .swiper-button-prev");
-const csnextBtn = document.querySelector(".slidewrapper .swiper-button-next");
+const slideWrapper = document.querySelector(".portfolio"),
+  prevBtn = slideWrapper.querySelector(".prev"),
+  nextBtn = slideWrapper.querySelector(".next");
 
-csprevBtn.addEventListener("click", () => {
-  slideWrapper.slidePrev();
+nextBtn.addEventListener("click", () => {
+  swiper.slideNext();
 });
-csnextBtn.addEventListener("click", () => {
-  slideWrapper.slideNext();
+prevBtn.addEventListener("click", () => {
+  swiper.slidePrev();
 });
